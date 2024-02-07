@@ -35,19 +35,22 @@ const Body = () => {
       console.log("error loading data");
     }
   };
-  const totalProducts = tableData.length;
+  const totalProducts = tableData.filter((item) => !item.disabled).length;
   const totalStoreValue = tableData.reduce((aggr, item) => {
-    return aggr + parseInt(item.price.substring(1));
+    if (!item.disabled) {
+      aggr = aggr + parseInt(item.price.substring(1));
+    }
+    return aggr;
   }, 0);
   const outOfStockValue = tableData.reduce((aggr, item) => {
-    if (item.quantity === 0) {
+    if (item.quantity === 0 && !item.disabled) {
       aggr = aggr + 1;
     }
     return aggr;
   }, 0);
   const categoryArray = [];
   const numberOfCategories = tableData.reduce((aggr, item) => {
-    if (!categoryArray.includes(item.category)) {
+    if (!categoryArray.includes(item.category) && !item.disabled) {
       aggr = aggr + 1;
       categoryArray.push(item.category);
     }
