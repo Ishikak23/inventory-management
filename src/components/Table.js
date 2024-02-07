@@ -13,7 +13,7 @@ const Table = (props) => {
   return (
     <div className="w-[100%] m-4 p-4">
       <table className="w-[100%]">
-        <thead className="text-cyan-100 text-left pb-1 h-14">
+        <thead className="text-[#5c6436] text-left pb-1 h-14">
           <tr>
             <th>Name</th>
             <th>Category</th>

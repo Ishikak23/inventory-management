@@ -24,18 +24,22 @@ const Popup = ({ getEditedData, setShowEditPopup, name }) => {
     setShowEditPopup(false);
   };
   const handleSave = () => {
-    getEditedData(popupData);
+    getEditedData({ ...popupData, price: "$" + popupData.price });
   };
   return (
-    <div className="bg-[#292b27] absolute w-[400px] h-[350px] p-4 rounded-lg left-0 right-0 top-0 bottom-0 m-auto">
-      <div className="flex flex-col gap-3 m-4">
+    <div className="bg-[#292b27] absolute w-[400px] h-[315px] p-4 rounded-lg left-0 right-0 top-0 bottom-0 m-auto">
+      <div className="flex flex-col gap-5 m-4">
         <div className="flex flex-row justify-between">
-          <div className="flex flex-col ">
-            <label className="text-white">Edit Product</label>
-            <label className="text-white">{name}</label>
+          <div className="flex flex-col w-9/12 gap-2">
+            <label className="text-white font-semibold text-2xl w-fit">
+              Edit Product
+            </label>
+            <label className="text-white font-medium size-4 w-fit">
+              {name}
+            </label>
           </div>
           <div onClick={handleCancel}>
-            <CloseIcon style={{ color: "yellow" }} />
+            <CloseIcon style={{ color: '#b4ce4a'}} />
           </div>
         </div>
         <div className="grid grid-cols-2">
@@ -74,7 +78,7 @@ const Popup = ({ getEditedData, setShowEditPopup, name }) => {
         </div>
         <div className="flex flex-row justify-end g-3">
           <button
-            className="p-2  text-yellow-300 border-none"
+            className="p-2  text-[#b4ce4a] border-none"
             onClick={handleCancel}
           >
             Cancel
