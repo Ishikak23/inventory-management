@@ -1,6 +1,6 @@
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
-const Popup = ({ getEditedData, setShowEditPopup }) => {
+const Popup = ({ getEditedData, setShowEditPopup, name }) => {
   const [popupData, setPopupData] = useState({
     category: "",
     value: "",
@@ -32,7 +32,7 @@ const Popup = ({ getEditedData, setShowEditPopup }) => {
         <div className="flex flex-row justify-between">
           <div className="flex flex-col ">
             <label className="text-white">Edit Product</label>
-            <label className="text-white">Name</label>
+            <label className="text-white">{name}</label>
           </div>
           <div onClick={handleCancel}>
             <CloseIcon style={{ color: "yellow" }} />

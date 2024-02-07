@@ -120,6 +120,7 @@ const Body = () => {
         <Popup
           getEditedData={handlePopupData}
           setShowEditPopup={setShowEditPopup}
+          name={tableData[selectedRow]?.name}
         />
       )}
     </div>
