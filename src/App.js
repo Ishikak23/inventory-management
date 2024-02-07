@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header";
+import Body from "./components/Body";
+import { useEffect, useState } from "react";
+import UserContext from "./utils/UserContext";
 
 function App() {
+  const [user, setUser] = useState("admin");
+  useEffect(() => {
+    setUser("admin");
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={{ currentUser: user, setUser }}>
+      <div className="bg-[#1f2221] w-[100-vh] h-[100vh]">
+        <Header />
+        <Body />
+      </div>
+    </UserContext.Provider>
   );
 }
 

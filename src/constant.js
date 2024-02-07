@@ -1,0 +1,42 @@
+export const mockData = [
+  {
+    name: "Bluetooth",
+    category: "Electronic",
+    value: "black",
+    quantity: 5,
+    price: "$30",
+    disabled: false,
+  },
+  {
+    name: "Edifier M43560",
+    category: "Electronic",
+    value: "black",
+    quantity: 0,
+    price: "$30",
+    disabled: false,
+  },
+  {
+    name: "Sony 4k ultra 55 inch TV",
+    category: "Electronic",
+    value: "black",
+    quantity: 17,
+    price: "$30",
+    disabled: false,
+  },
+  {
+    name: "Samsumg 55 inch TV",
+    category: "Electronic",
+    value: "black",
+    quantity: 50,
+    price: "$30",
+    disabled: false,
+  },
+  {
+    name: "samsumg S34 Ultra",
+    category: "phone",
+    value: "black",
+    quantity: 0,
+    price: "$30",
+    disabled: false,
+  },
+];
